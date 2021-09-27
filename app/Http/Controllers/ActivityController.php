@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ActivitiesController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class ActivitiesController extends Controller
      */
     public function index()
     {
-        //
+        return view('homepages/editactivitypage');
     }
 
     /**

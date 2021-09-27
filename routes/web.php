@@ -1,8 +1,10 @@
 <?php
 use App\Http\Controllers\MainpageController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\ActivityController;
 Route::resource('mainpages', MainpageController::class);
 Route::resource('homepages', HomepageController::class);
+Route::resource('homepage/activity', ActivityController::class);
 
 /*use Illuminate\Support\Facades\Route;*/
 
