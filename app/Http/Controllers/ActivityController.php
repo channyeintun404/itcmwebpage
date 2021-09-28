@@ -1,11 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Services\ActivityService;
+use Session;
 
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
+    protected $activityService;
+
+    public function __construct(ActivityService $activityService){
+
+        $this->activityService = $activityService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,9 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        return view('homepages/editactivitypage');
+        $activities= $this->activityService->getAllactivity();
+        // dd($activities);
+        return view('homepages.activitylistpage')->with('activities', $activities);
     }
 
     /**
@@ -56,7 +67,7 @@ class ActivityController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('homepages.editactivitypage');
     }
 
     /**
