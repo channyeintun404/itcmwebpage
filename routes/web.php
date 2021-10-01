@@ -5,6 +5,7 @@ use App\Http\Controllers\ActivityController;
 Route::resource('mainpages', MainpageController::class);
 Route::resource('homepages', HomepageController::class);
 Route::resource('homepage/activity', ActivityController::class);
+Route::post('/update', [App\Http\Controllers\ActivityController::class, 'update'])->name('update');
 
 /*use Illuminate\Support\Facades\Route;*/
 
@@ -30,3 +31,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::post('activity/update', [App\Http\Controllers\ActivityController::class, 'update'])->name('update);
+
