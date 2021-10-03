@@ -35,6 +35,8 @@ class ActivityController extends Controller
     public function create()
     {
         //
+       
+        return view('homepages/addactivity');
     }
 
     /**
@@ -45,7 +47,8 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd("stroe");
+        return view('homepages/test');
     }
 
     /**

@@ -1,4 +1,5 @@
 <div class="table table-responsive">
+<a href="activity/create">ADD</a>
       <table id="employeelist" class="table table-sm" style="font-size:13px" >
         <thead>
           <tr>
