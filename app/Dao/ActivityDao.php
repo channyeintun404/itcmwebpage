@@ -84,23 +84,17 @@ class ActivityDao
     {
       $id=$data->input('id');
       $activity = Activity::find($id);
-      $activity -> emp_name = $data->input('emp_name');
-      $activity -> emp_no = $data->input('emp_no');        
-      $activity -> emp_phno = $data->input('emp_phno');        
-      $activity -> emp_address = $data->input('emp_address');
-      $activity -> emp_position = $data->input('emp_position');
-      $activity -> password = $data->input('password');
-      $activity -> emp_email = $data->input('emp_email');        
-      $activity -> emp_joindate = $data->input('emp_joindate');        
-      $activity -> dateofbirth = $data->input('dateofbirth');
-      $activity -> gender = $data->input('gender');
-      $activity -> emp_nrc = $data->input('emp_nrc');    
+      $activity -> Title = $data->input('activity_title');
+      $activity -> Description = $data->input('activity_description');        
+      $activity -> Activities_Date = $data->input('activity_date'); 
       // handle the is_uploaded_file
-         if($data->hasFile('emp_img')){
-          $path =$data->file('emp_img')->storeAs("activityprofile","emp_image_".$activity -> emp_name.".jpg",['disk'=>'public']);  
+         if($data->hasFile('activity_image')){
+          $path =$data->file('activity_image')->storeAs("activityprofile","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
           $imgname = substr($path,strlen("activityprofile/"));  
          }
-         
+         if ($data->hasFile('activity_image')) {
+          $activity-> Images = $imgname;
+        }
          try
          {
            $activity->save();

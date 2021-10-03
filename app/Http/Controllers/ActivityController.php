@@ -70,7 +70,9 @@ class ActivityController extends Controller
      */
     public function edit($id)
     {
-        return view('homepages.editactivitypage');
+        $activity= $this->activityService->getById($id);
+        // dd($activitie);
+        return view('homepages.editactivitypage')->with('activity', $activity);
     }
 
     /**
@@ -80,9 +82,11 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $result = $this->activityService->updateActivity($request);
+        return redirect('/homepage/activity');
+        // dd($request);
     }
 
     /**
