@@ -34,8 +34,8 @@ class ActivityService
     }
 
     //update activity
-    public function updateActivity($data){        
-        $result = $this->activityDao->updateActivity($data);
+    public function updateActivity($request){        
+        $result = $this->activityDao->updateActivity($request);
         return $result;
     }
 

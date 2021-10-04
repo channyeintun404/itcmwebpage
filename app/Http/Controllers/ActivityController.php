@@ -48,7 +48,9 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         // dd("stroe");
-        return view('homepages/test');
+        $result = $this->activityService->saveActivity($request);
+        return redirect('/homepage/activity');
+        // return redirect('homepages/activitylistpage');
     }
 
     /**

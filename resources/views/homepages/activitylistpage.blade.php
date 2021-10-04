@@ -1,5 +1,4 @@
 <div class="table table-responsive">
-<a href="activity/create">ADD</a>
       <table id="employeelist" class="table table-sm" style="font-size:13px" >
         <thead>
           <tr>
@@ -20,8 +19,8 @@
                 <td><a href="/homepage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
                 </td>
             </tr>
-           
             @endforeach
         </tbody>
       </table> 
+      <a href="activity/create" style="margin-left: 5px; font-size: 11px;">ADD</a>
     </div>
