@@ -4,10 +4,13 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ActivityController;
 Route::resource('mainpages', MainpageController::class);
 Route::resource('homepages', HomepageController::class);
-Route::resource('homepage/activity', ActivityController::class);
+Route::resource('mainpage/activity', ActivityController::class);
 Route::post('/update', [App\Http\Controllers\ActivityController::class, 'update'])->name('update');
 
-/*use Illuminate\Support\Facades\Route;*/
+// Route::post('homepage/activity/store', 'ActivityController@store')->name('store');
+Route::post('mainpage/activity/store', [App\Http\Controllers\ActivityController::class, 'store'])->name('store');
+
+/*use Illuminate\Support\Facades\Route;*/ 
 
 /*
 |--------------------------------------------------------------------------

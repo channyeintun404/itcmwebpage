@@ -16,11 +16,11 @@
                 <td> {{$activity->Title}}</td>
                 <td> {{$activity->Activities_Date}}</td>
                 <td> {{$activity->Description}}</td>
-                <td><a href="/homepage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
+                <td><a href="/mainpage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
                 </td>
             </tr>
-           
             @endforeach
         </tbody>
       </table> 
+      <a href="activity/create" style="margin-left: 5px; font-size: 11px;">ADD</a>
     </div>
