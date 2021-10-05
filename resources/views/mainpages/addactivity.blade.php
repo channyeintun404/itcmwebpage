@@ -10,7 +10,7 @@
     <h3 class="card-title">Add Activities</h3>
   </div>
 
-<form action="{{route('store')}}" method="POST" class="form-horizontal">
+<form action="{{route('store')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 @csrf
   <div class="card-body">
     <div class="form-group">

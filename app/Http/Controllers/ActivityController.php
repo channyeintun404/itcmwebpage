@@ -24,7 +24,7 @@ class ActivityController extends Controller
     {
         $activities= $this->activityService->getAllactivity();
         // dd($activities);
-        return view('homepages.activitylistpage')->with('activities', $activities);
+        return view('mainpages.activitylistpage')->with('activities', $activities);
     }
 
     /**
@@ -36,7 +36,7 @@ class ActivityController extends Controller
     {
         //
        
-        return view('homepages/addactivity');
+        return view('mainpages/addactivity');
     }
 
     /**
@@ -49,8 +49,8 @@ class ActivityController extends Controller
     {
         // dd("stroe");
         $result = $this->activityService->saveActivity($request);
-        return redirect('/homepage/activity');
-        // return redirect('homepages/activitylistpage');
+        return redirect('/mainpage/activity');
+        // return redirect('mainpages/activitylistpage');
     }
 
     /**
@@ -74,7 +74,7 @@ class ActivityController extends Controller
     {
         $activity= $this->activityService->getById($id);
         // dd($activitie);
-        return view('homepages.editactivitypage')->with('activity', $activity);
+        return view('mainpages.editactivitypage')->with('activity', $activity);
     }
 
     /**
@@ -87,7 +87,7 @@ class ActivityController extends Controller
     public function update(Request $request)
     {
         $result = $this->activityService->updateActivity($request);
-        return redirect('/homepage/activity');
+        return redirect('/mainpage/activity');
         // dd($request);
     }
 

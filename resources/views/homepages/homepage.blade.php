@@ -7,5 +7,4 @@
    
       <p>Home Page</p>
       <button class="btn btn-default" data-toggle="control-sidebar">AdminLTE Test for home page</button>
-      <a href="homepage/activity">go activity</a>
 @endsection
