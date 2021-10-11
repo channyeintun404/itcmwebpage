@@ -16,7 +16,7 @@
                 <td> {{$activity->Title}}</td>
                 <td> {{$activity->Activities_Date}}</td>
                 <td> {{$activity->Description}}</td>
-                <td><a href="/homepage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
+                <td><a href="/mainpage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
                 </td>
             </tr>
             @endforeach

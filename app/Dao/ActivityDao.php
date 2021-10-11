@@ -37,29 +37,14 @@ class ActivityDao
         $activity -> Activities_Date = $data->input('addactivity_date');
         // handle the is_uploaded_file
         if($data->hasFile('addactivity_image')){
-          $path =$data->file('addactivity_image')->storeAs("activityprofile","addactivity_image_".$activity -> addactivity_image.".jpg",['disk'=>'public']);  
-         $imgname = substr($path,strlen("activityprofile/"));            
-          }
-         if ($data->hasFile('addactivity_image')) {
-            $activity-> addactivity_image = $imgname;
-          }
-         $result = ['status'=>200];
-         try
-         {
-           $activity->save();
-           $result = [
-             'status'=> 200,
-             'message'=> "New Activity have been created!"
-           ];
-         }catch(\Illuminate\Database\QueryException $ex)
-         {
-           $result = [
-               'status'=> 500,
-               'message'=> "Entry Failed!! 
-               EmpNo,NRC and Email must be unique!!!"
-           ];
-         }
-         return $result;
+
+          $path =$data->file('addactivity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("activityimages/"));  
+        }
+        if ($data->hasFile('addactivity_image')) {
+          $activity-> Images = $imgname;
+        }
+        $activity->save();
     }
 
     // get activity by Id
@@ -80,8 +65,8 @@ class ActivityDao
       $activity -> Activities_Date = $data->input('activity_date'); 
       // handle the is_uploaded_file
          if($data->hasFile('activity_image')){
-          $path =$data->file('activity_image')->storeAs("activityprofile","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
-          $imgname = substr($path,strlen("activityprofile/"));  
+          $path =$data->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("activityimages/"));  
          }
          if ($data->hasFile('activity_image')) {
           $activity-> Images = $imgname;

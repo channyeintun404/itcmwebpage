@@ -15,4 +15,7 @@
         </div><!-- /.info-box-content -->
       </div><!-- /.info-box -->
 
+      
+      <a href="mainpage/activity">go activity</a>
+
 @endsection
