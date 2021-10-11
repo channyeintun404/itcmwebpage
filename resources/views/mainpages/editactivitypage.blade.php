@@ -1,27 +1,44 @@
-<form method="post" action="{{route('update')}}" enctype="multipart/form-data" >
-            @csrf
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                             <div class="form-group">
-                                <input type="text" class="form-control" id="id" name="id" value="{{$activity -> id}}" hidden>
-                                <label for="activity_title" class="col-form-label"> Title:  </label>
-                                <input type="text" class="form-control" id="activity_title" name="activity_title" value="{{$activity -> Title}}" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="activity_description" class="col-form-label">  Description</label>
-                                <input type="text" class="form-control" id="activity_description" name="activity_description" value="{{$activity -> Description}}" required >
-                              </div>
-                              <div class="form-group">
-                                <label for="activity_image" class="col-form-label"> Activity image</label>
-                                <input type="file" class="form-control" id="activity_image" name="activity_image">
-                              </div> 
-                                <div class="form-group">
-                                  <label for="activity_date" class="col-form-label"> Activity Date</label>
-                                  <input type="date" class="form-control" id="activity_date" name="activity_date" value="{{$activity -> Activities_Date}}" required>
-                                </div>
-                         </div>
-                         <button type="submit" class="btn btn-info" style="width: 85px;  font-size:13px;"> <i class="fa fa-pencil" aria-hidden="true"></i> Update</button>
-                    </div>
-                </div>  
-          </form>
+
+@extends('homepages.layout')
+
+@section('content')
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8" style="align=center;">
+<div class="card">
+  <div class="card-header card-primary">
+    <h3 class="card-title">Confirm Upadate Activities</h3>
+  </div>
+<form action="{{route('updateconfirm')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
+@csrf
+  <div class="card-body">
+      
+  <input type="text" name="id" value="{{$activity->id}}" hidden>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="activity_title" name="activity_title" placeholder="Enter email" value="{{$activity->Title}}" >
+    </div>
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <textarea rows="10" cols="50" class="form-control" id="activity_description" name="activity_description" placeholder="Description" >{{$activity->Description}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="image">Images:</label>
+      <input type="file" id="activity_image" name="activity_image" value="{{$activity->Images}}" >
+    </div>
+    <div class="form-group">
+      <label for="date">Activity_Date:</label>
+      <input type="date" id="activity_date" name="activity_date" required class="form-control" value="{{$activity->Activities_Date}}" >
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="submit" class="btn btn-primary">Confirm</button>
+  </div>
+</form>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>
+@endsection
