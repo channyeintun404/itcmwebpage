@@ -7,7 +7,7 @@
 <div class="col-md-8" style="align=center;">
 <div class="card">
   <div class="card-header card-primary">
-    <h3 class="card-title">Add Activities</h3>
+    <h2 class="card-title" style="color:white;">Add Activities</h3>
   </div>
 
 <form action="{{route('store')}}" method="POST" class="form-horizontal">
