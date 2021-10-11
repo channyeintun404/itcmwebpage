@@ -6,6 +6,7 @@ Route::resource('mainpages', MainpageController::class);
 Route::resource('homepages', HomepageController::class);
 Route::resource('mainpage/activity', ActivityController::class);
 Route::post('/update', [App\Http\Controllers\ActivityController::class, 'update'])->name('update');
+Route::post('/updateconfirm', [App\Http\Controllers\ActivityController::class, 'updateconfirm'])->name('updateconfirm');
 
 // Route::post('homepage/activity/store', 'ActivityController@store')->name('store');
 Route::post('mainpage/activity/store', [App\Http\Controllers\ActivityController::class, 'store'])->name('store');

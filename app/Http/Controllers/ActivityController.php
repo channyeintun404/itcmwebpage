@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Services\ActivityService;
 use Session;
+use App\Models\Activity;
 
 use Illuminate\Http\Request;
 
@@ -101,4 +102,26 @@ class ActivityController extends Controller
     {
         //
     }
+
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateconfirm(Request $request)
+    {
+        $id=$request->input('id');
+        $activity = Activity::find($id);
+        $activity -> Title = $request->input('activity_title');
+        $activity -> Description = $request->input('activity_description');        
+        $activity -> Activities_Date = $request->input('activity_date'); 
+        // $file = $request ->file('activity_image');
+        // dd($file);
+        // return view('/mainpages/editactivityconfirm')->with('activity',$activity, 'file' ,$file);
+        return view('/mainpages/editactivityconfirm')->with('activity',$activity);
+
+    }
+    
 }
