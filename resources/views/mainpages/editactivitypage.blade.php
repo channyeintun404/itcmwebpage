@@ -25,6 +25,7 @@
     </div>
     <div class="form-group">
       <label for="image">Images:</label>
+      <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px"><br>
       <input type="file" id="activity_image" name="activity_image" value="{{$activity->Images}}" >
     </div>
     <div class="form-group">

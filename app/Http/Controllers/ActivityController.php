@@ -131,11 +131,13 @@ class ActivityController extends Controller
      */
     public function updateconfirm(Request $request)
     {
-        $id=$request->input('id');
-        $activity = Activity::find($id);
-        $activity -> Title = $request->input('activity_title');
-        $activity -> Description = $request->input('activity_description');        
-        $activity -> Activities_Date = $request->input('activity_date'); 
+
+        $activity = $this->activityService->confirmActivity($request);
+        // $id=$request->input('id');
+        // $activity = Activity::find($id);
+        // $activity -> Title = $request->input('activity_title');
+        // $activity -> Description = $request->input('activity_description');        
+        // $activity -> Activities_Date = $request->input('activity_date'); 
         // $file = $request ->file('activity_image');
         // dd($file);
         // return view('/mainpages/editactivityconfirm')->with('activity',$activity, 'file' ,$file);

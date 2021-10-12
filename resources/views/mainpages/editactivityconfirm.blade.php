@@ -24,8 +24,9 @@
       <textarea rows="10" cols="50" class="form-control" id="activity_description" name="activity_description" placeholder="Description" hidden>{{$activity->Description}}</textarea>
     </div>
     <div class="form-group">
-      <label for="image">Images:</label>
-    
+      <label for="image">Images: {{$activity->Images}}</label>
+      <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px">
+      <input type="text" name="activity_image"  value="{{$activity->Images}}" hidden>
     </div>
     <div class="form-group">
       <label for="date">Activity_Date: {{$activity->Activities_Date}}</label>
