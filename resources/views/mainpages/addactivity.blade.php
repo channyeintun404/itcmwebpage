@@ -10,7 +10,7 @@
     <h2 class="card-title" style="color:white;">Add Activities</h3>
   </div>
 
-<form action="{{route('store')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
+<form action="{{route('addconfirm')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 @csrf
   <div class="card-body">
     <div class="form-group">
@@ -31,7 +31,8 @@
     </div>
   </div>
   <div class="card-footer">
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
   </div>
 </form>
 </div>

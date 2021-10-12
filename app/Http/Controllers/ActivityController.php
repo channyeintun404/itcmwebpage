@@ -54,6 +54,25 @@ class ActivityController extends Controller
         // return redirect('mainpages/activitylistpage');
     }
 
+    public function addconfirm(Request $data) {
+        $activity = new Activity;
+        // $activity = new $this->activity;
+        $activity -> Title = $data->input('addactivity_title');
+        $activity -> Description = $data->input('addactivity_description');        
+        $activity -> Activities_Date = $data->input('addactivity_date');
+        // handle the is_uploaded_file
+        if($data->hasFile('addactivity_image')){
+
+          $path =$data->file('addactivity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("activityimages/"));  
+        }
+        if ($data->hasFile('addactivity_image')) {
+          $activity-> Images = $imgname;
+        }
+        // return view('mainpage.addactivityconfirm', compact('activity',$activity));
+        return view('/mainpages/addactivityconfirm')->with('activity',$activity);
+    }
+
     /**
      * Display the specified resource.
      *

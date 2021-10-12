@@ -65,7 +65,7 @@ class ActivityDao
       $activity -> Activities_Date = $data->input('activity_date'); 
       // handle the is_uploaded_file
          if($data->hasFile('activity_image')){
-          $path =$data->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+          $path =$data->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['visibility'=>'public']);  
           $imgname = substr($path,strlen("activityimages/"));  
          }
          if ($data->hasFile('activity_image')) {

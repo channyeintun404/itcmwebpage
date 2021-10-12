@@ -11,13 +11,20 @@
         </thead>
         <tbody >
             @foreach($activities as $activity)
+            <!-- <tr>
+            
+            </tr> -->
             <tr>
                 <td></td>
+                <td>
+            <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px">
+            </td>
                 <td> {{$activity->Title}}</td>
                 <td> {{$activity->Activities_Date}}</td>
                 <td> {{$activity->Description}}</td>
                 <td><a href="/mainpage/activity/{{$activity->id}}/edit" class="btn btn-sm btn-primary " >edit</a>
                 </td>
+                <td></td>
             </tr>
             @endforeach
         </tbody>
