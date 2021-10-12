@@ -63,14 +63,15 @@ class ActivityDao
       $activity -> Title = $data->input('activity_title');
       $activity -> Description = $data->input('activity_description');        
       $activity -> Activities_Date = $data->input('activity_date'); 
+      $activity-> Images = $data->input('activity_image'); 
       // handle the is_uploaded_file
-         if($data->hasFile('activity_image')){
-          $path =$data->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
-          $imgname = substr($path,strlen("activityimages/"));  
-         }
-         if ($data->hasFile('activity_image')) {
-          $activity-> Images = $imgname;
-        }
+        //  if($data->hasFile('activity_image')){
+        //   $path =$data->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+        //   $imgname = substr($path,strlen("activityimages/"));  
+        //  }
+        //  if ($data->hasFile('activity_image')) {
+        //   $activity-> Images = $imgname;
+        // }
          try
          {
            $activity->save();
@@ -98,6 +99,25 @@ class ActivityDao
         $activity->save();
 
     }  
+
+    public function confirmActivity($request)
+    {
+        $id=$request->input('id');
+        $activity = Activity::find($id);
+        $activity -> Title = $request->input('activity_title');
+        $activity -> Description = $request->input('activity_description');        
+        $activity -> Activities_Date = $request->input('activity_date'); 
+
+         // handle the is_uploaded_file
+         if($request->hasFile('activity_image')){
+          $path =$request->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("activityimages/"));  
+         }
+         if ($request->hasFile('activity_image')) {
+          $activity-> Images = $imgname;
+        }
+        return $activity;
+    }
 
     
 }

@@ -39,6 +39,12 @@ class ActivityService
         return $result;
     }
 
+    //update activity
+    public function confirmActivity($request){        
+        $result = $this->activityDao->confirmActivity($request);
+        return $result;
+    }
+
   
 
 }
