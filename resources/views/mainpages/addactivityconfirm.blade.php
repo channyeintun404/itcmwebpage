@@ -22,9 +22,8 @@
       <textarea rows="10" cols="50" class="form-control" id="addactivity_description" name="addactivity_description" placeholder="Description" hidden>{{$activity->Description}}</textarea>
     </div>
     <div class="form-group">
-      <label for="image">Images: </label>
-      <input type="file" id="addactivity_image" name="addactivity_image" value=" {{$activity->Images}}">
-      <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px">
+      <label for="image">Images: <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px"></label>
+      <input type="file" id="addactivity_image" name="addactivity_image" value=" {{$activity->Images}}" hidden>
     </div>
     <div class="form-group">
       <label for="date">Activity_Date: {{$activity->Activities_Date}}</label>
