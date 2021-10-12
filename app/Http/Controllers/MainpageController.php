@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Mainpage;
 use Illuminate\Http\Request;
+use App\Services\ActivityService;
+use Session;
+use App\Models\Activity;
 
 class MainpageController extends Controller
 {
+    protected $activityService;
+
+    public function __construct(ActivityService $activityService){
+
+        $this->activityService = $activityService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +23,12 @@ class MainpageController extends Controller
      */
     public function index()
     {
-        return view('mainpages.mainpage');
+      //  return view('mainpages.mainpage');
         //
+        $activities= $this->activityService->getlastthreeactivity();
+        // dd($activities);
+        return view('mainpages.mainpage')->with('activities', $activities);
+  
     }
 
     /**

@@ -45,6 +45,21 @@ class ActivityService
         return $result;
     }
 
-  
+      // get last 3 activity
+      public function getlastthreeactivity(){
+        return $this->activityDao->getlastthree();
+    }
+
+    //delete all activity
+    public function deleteallActivity($request){
+        $result = $this->activityDao->deleteallActivity($request);
+        return $result;
+    }
+
+     //delete all Alert activity
+     public function deleteallAlertActivity($request){
+        $result = $this->activityDao->deleteallAlertActivity($request);
+        return $result;
+     }
 
 }

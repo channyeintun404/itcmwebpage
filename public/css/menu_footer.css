@@ -1,0 +1,36 @@
+/* / Menu Css / */
+.navdiv {
+    background-color: rgb(37, 117, 238);
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 3px;
+}
+.navitem {
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 30px;
+}
+.vl {
+    border: .5px solid #fff;
+}
+
+
+/* / Footer Css / */
+.footerdiv {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(13, 25, 97); 
+    margin-bottom: 3px; 
+    display: flex;
+}
+.leftdiv {
+    width: 50%;
+}
+.rightdiv {
+    width: 50%;
+    font-size: 13px;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+}

@@ -119,5 +119,29 @@ class ActivityDao
         return $activity;
     }
 
+    // deleteall activity
+    public function deleteallActivity(Request $request)
+    {
+
+      $data = $request->all();
+
+      foreach ($data['activity'] as $i => $id) {
+    
+        $activity=Activity::find($id);
+    
+    $activity->delete();
+    // return back()->with('success','Activity deleted successfully');
+    }    
+  }
+
+ //  get last 3 activity
+ public function getlastthree()
+ {
+   
+     $activities = Activity::latest()->take(3)->get();;
+     return $activities;
+     
+ }
+
     
 }
