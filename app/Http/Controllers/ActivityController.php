@@ -82,7 +82,11 @@ class ActivityController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $activity= $this->activityService->getById($id);
+        //  dd($activity);
+        return view('mainpages.showactivitypage')->with('activity', $activity);
+  
     }
 
     /**
@@ -145,5 +149,15 @@ class ActivityController extends Controller
         return view('/mainpages/editactivityconfirm')->with('activity',$activity);
 
     }
+
+    public function deleteall(Request $request){
+        // dd("stroe");
+        $result = $this->activityService->deleteallActivity($request);
+       return redirect('/mainpage/activity');
+       // return back()->with('success','Activity deleted successfully');
+       
+   
+       }
+      
     
 }

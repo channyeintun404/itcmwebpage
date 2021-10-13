@@ -31,8 +31,8 @@
     </div>
   </div>
   <div class="card-footer">
-  <a href="mainpage/activity"><button class="btn btn-default btn-close">Cancel</button></a>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/go-somewhere-else"><button class="btn btn-danger btn-close">Cancel</button></a>
+    <button type="submit" class="btn btn-success">Save</button>
     <!-- <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a> -->
   </div>
 </form>

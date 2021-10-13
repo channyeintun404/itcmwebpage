@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="card-footer">
-    <button type="submit" class="btn btn-primary">Confirm</button>
+    <button type="submit" class="btn btn-success">Confirm</button>
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
   </div>
 </form>

@@ -10,6 +10,7 @@ Route::post('/updateconfirm', [App\Http\Controllers\ActivityController::class, '
 Route::post('/addconfirm', [App\Http\Controllers\ActivityController::class, 'addconfirm'])->name('addconfirm');
 // Route::post('homepage/activity/store', 'ActivityController@store')->name('store');
 Route::post('mainpage/activity/store', [App\Http\Controllers\ActivityController::class, 'store'])->name('store');
+Route::post('mainpage/activity/deleteall', [App\Http\Controllers\ActivityController::class, 'deleteall'])->name('deleteall');
 
 /*use Illuminate\Support\Facades\Route;*/ 
 
