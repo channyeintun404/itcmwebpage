@@ -1,4 +1,5 @@
 @extends('mainpages.layout')
+@section('content')
 <link href="{{ asset('css/activities_list.css') }}" rel="stylesheet"> 
 
 <div class="list-type2"> 
@@ -43,3 +44,4 @@
 </div>
 
 </form>
+@endsection

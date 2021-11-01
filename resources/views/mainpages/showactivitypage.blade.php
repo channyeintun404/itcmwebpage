@@ -40,8 +40,15 @@
 </div>
 
 <div class="delete">
-     <a class="btn btn-primary" href="/mainpage/activity/{{$activity->id}}/edit">Update</a>
-     <button type="submit" class="btn btn-danger">Delete</button>
+     
+        <form method="POST" action="{{route('delete')}}" >
+        @csrf
+          <input type="text" name="id" value="{{$activity->id}}" hidden>
+           <div  class="row">
+                <a class="btn btn-primary" href="/mainpage/activity/{{$activity->id}}/edit">Update</a>
+                <div class="col-sm-2"><button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete this activity?')"> Delete </button></div>                            
+           </div>               
+       </form>
 </div> 
 
 @endsection

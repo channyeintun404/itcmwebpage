@@ -49,7 +49,7 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $result = $this->activityService->saveActivity($request);
-        return redirect('/mainpage/activity');
+        return redirect('/mainpage/activity')->with('success','New Activity have been created!!');;
         // return redirect('mainpages/activitylistpage');
     }
 
@@ -121,7 +121,7 @@ class ActivityController extends Controller
     public function update(Request $request)
     {
         $result = $this->activityService->updateActivity($request);
-        return redirect('/mainpage/activity');
+        return redirect('/mainpage/activity')->with('success','Activity have been updated!!');;
         // dd($request);
     }
 
@@ -131,9 +131,10 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $this->activityService->delete($request);
+        return redirect('/mainpage/activity')->with('success','Activity have been deleted!!');
     }
 
         /**
@@ -158,7 +159,7 @@ class ActivityController extends Controller
     public function deleteall(Request $request){
         // dd("stroe");
         $result = $this->activityService->deleteallActivity($request);
-       return redirect('/mainpage/activity');
+       return redirect('/mainpage/activity')->with('success','Activity have been deleted!!');;
        // return back()->with('success','Activity deleted successfully');
        
    

@@ -62,4 +62,10 @@ class ActivityService
         return $result;
      }
 
+     //delete activity by id
+     public function delete($request){
+        $result = $this->activityDao->delete($request);
+        return $result;
+     }
+
 }

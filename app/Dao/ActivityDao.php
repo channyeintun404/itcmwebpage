@@ -95,9 +95,7 @@ class ActivityDao
     {
         $id=$data->input('id');
         $activity = Activity::find($id);
-        $activity-> delete_flag = true;        
-        $activity-> deleted_at = date('Y-m-d H:i:s');;
-        $activity->save();
+        $activity->delete();
 
     }  
 

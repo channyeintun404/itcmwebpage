@@ -17,10 +17,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-confirmation/1.0.5/bootstrap-confirmation.min.js"></script>
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
 </head>
 <body>
     
 <div class="container">
+@include('inc.messages')
     @yield('content')
 </div>
 </body>
