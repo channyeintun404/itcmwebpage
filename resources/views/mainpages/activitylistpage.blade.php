@@ -13,12 +13,17 @@
 <form action="{{route('deleteall')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 
 {{ csrf_field() }}
-<input type="checkbox" id="master"style="margin-left: 12px">
-<button  style="margin-bottom: 10px" class="btn btn-primary delete_all button delete-confirm" value="delete" >Delete All Selected</button>
 
 
 <ul  id="top">
+@if($activities->isEmpty())
+<input type="checkbox" id="master"style="margin-left: 12px" disabled>
+<button  style="margin-bottom: 10px" class="btn btn-primary delete_all button delete-confirm" value="delete" disabled >Delete All Selected</button>
+@else
+<input type="checkbox" id="master"style="margin-left: 12px">
+<button  style="margin-bottom: 10px" class="btn btn-primary delete_all button delete-confirm" value="delete"  >Delete All Selected</button>
 
+@endif
 @foreach ($activities as $activity)   
   <li id="li_{{$activity->id}}">
     <div class="content"><input type="checkbox" name="activity[]" class="sub_chk" data-id="{{$activity->id}}" value="{{ $activity->id }}">
@@ -32,7 +37,7 @@
 <div class="row" >
     <div class="col-lg-12 margin-tb">
         <div class="pull-right" id="top">
-            <a class="btn btn-danger" href="activity/create"> Activities Add</a>
+            <a class="btn btn-success" href="activity/create"> Activities Add</a>
         </div>
     </div>
 </div>

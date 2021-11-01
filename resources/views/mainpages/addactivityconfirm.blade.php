@@ -34,6 +34,7 @@
     <a href="/go-somewhere-else"><button class="btn btn-danger btn-close">Cancel</button></a>
     <button type="submit" class="btn btn-success">Save</button>
     <!-- <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a> -->
+    <a href="/mainpage/activity" class="btn btn-primary">Back</a>
   </div>
 </form>
 </div>

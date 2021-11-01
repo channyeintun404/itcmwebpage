@@ -69,7 +69,7 @@ class ActivityController extends Controller
         if ($data->hasFile('addactivity_image')) {
           $activity-> Images = $imgname;
         }
-        $activity->save();
+        // $activity->save();
         // return view('mainpage.addactivityconfirm', compact('activity',$activity));
         return view('/mainpages/addactivityconfirm')->with('activity',$activity);
     }

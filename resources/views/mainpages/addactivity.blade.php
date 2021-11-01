@@ -15,7 +15,7 @@
   <div class="card-body">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="addactivity_title" name="addactivity_title" placeholder="Enter email">
+      <input type="text" class="form-control" id="addactivity_title" name="addactivity_title" placeholder="Enter title" size="10">
     </div>
     <div class="form-group">
       <label for="description">Description:</label>
@@ -26,13 +26,13 @@
       <input type="file" id="addactivity_image" name="addactivity_image">
     </div>
     <div class="form-group">
-      <label for="date">Activity_Date:</label>
+      <label for="date">Date:</label>
       <input type="date" id="addactivity_date" name="addactivity_date" required class="form-control">
     </div>
   </div>
   <div class="card-footer">
     <button type="submit" class="btn btn-success">Confirm</button>
-    <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+    <a href="/mainpage/activity" class="btn btn-primary">Back</a>
   </div>
 </form>
 </div>

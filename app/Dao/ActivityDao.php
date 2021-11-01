@@ -44,7 +44,7 @@ class ActivityDao
         if ($data->hasFile('addactivity_image')) {
           $activity-> Images = $imgname;
         }
-        // $activity->save();
+        $activity->save();
     }
 
     // get activity by Id

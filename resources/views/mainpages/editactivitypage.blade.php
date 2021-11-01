@@ -17,7 +17,7 @@
   <input type="text" name="id" value="{{$activity->id}}" hidden>
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="activity_title" name="activity_title" placeholder="Enter email" value="{{$activity->Title}}" >
+      <input type="text" class="form-control" id="activity_title" name="activity_title" placeholder="Enter title" value="{{$activity->Title}}" >
     </div>
     <div class="form-group">
       <label for="description">Description: </label>
@@ -34,7 +34,8 @@
     </div>
   </div>
   <div class="card-footer">
-    <button type="submit" class="btn btn-primary">Confirm</button>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="./" class="btn btn-primary">Back</a>
   </div>
 </form>
 </div>
