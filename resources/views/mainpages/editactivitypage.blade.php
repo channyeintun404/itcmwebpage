@@ -18,10 +18,16 @@
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="activity_title" name="activity_title" placeholder="Enter title" value="{{$activity->Title}}" >
+      @if($errors->has('activity_title'))
+        <div class="error" style="color:red;">{{ $errors->first('activity_title') }}</div>
+      @endif
     </div>
     <div class="form-group">
       <label for="description">Description: </label>
       <textarea rows="10" cols="50" class="form-control" id="activity_description" name="activity_description" placeholder="Description" >{{$activity->Description}}</textarea>
+      @if($errors->has('activity_description'))
+        <div class="error" style="color:red;">{{ $errors->first('activity_description') }}</div>
+      @endif
     </div>
     <div class="form-group">
       <label for="image">Images:</label>

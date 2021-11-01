@@ -15,11 +15,17 @@
   <div class="card-body">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="addactivity_title" name="addactivity_title" placeholder="Enter title" size="10">
+      <input type="text" class="form-control" id="addactivity_title" name="addactivity_title" placeholder="Title must be between 1 to 30 characters." size="10" value="{{old('addactivity_title')}}" required>
+      @if($errors->has('addactivity_title'))
+        <div class="error" style="color:red;">{{ $errors->first('addactivity_title') }}</div>
+      @endif
     </div>
     <div class="form-group">
       <label for="description">Description:</label>
-      <textarea rows="10" cols="50" class="form-control" id="addactivity_description" name="addactivity_description" placeholder="Description"></textarea>
+      <textarea rows="10" cols="40" class="form-control" id="addactivity_description" name="addactivity_description" placeholder="Description" required>{{old('addactivity_description')}}</textarea>
+      @if($errors->has('addactivity_description'))
+        <div class="error" style="color:red;">{{ $errors->first('addactivity_description') }}</div>
+      @endif
     </div>
     <div class="form-group">
       <label for="image">Images:</label>

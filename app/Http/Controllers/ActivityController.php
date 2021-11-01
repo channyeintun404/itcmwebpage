@@ -48,7 +48,6 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        // dd("stroe");
         $result = $this->activityService->saveActivity($request);
         return redirect('/mainpage/activity');
         // return redirect('mainpages/activitylistpage');
@@ -56,6 +55,15 @@ class ActivityController extends Controller
 
     public function addconfirm(Request $data) {
         $activity = new Activity;
+
+        
+        $rules = [
+            'addactivity_title' => 'required|max:30',
+            'addactivity_description' => 'required|max:250',
+        ];
+    
+    
+        $this->validate($data, $rules);
         // $activity = new $this->activity;
         $activity -> Title = $data->input('addactivity_title');
         $activity -> Description = $data->input('addactivity_description');        
@@ -84,7 +92,8 @@ class ActivityController extends Controller
     {
         
         $activity= $this->activityService->getById($id);
-        //  dd($activity);
+        // $activity->Title = Str::limit($activity->Title, 50);
+        // $activity->Description = Str::limit($activity->Description, 250);
         return view('mainpages.showactivitypage')->with('activity', $activity);
   
     }
@@ -136,16 +145,12 @@ class ActivityController extends Controller
      */
     public function updateconfirm(Request $request)
     {
-
+        $rules = [
+            'activity_title' => 'required|max:30',
+            'activity_description' => 'required|max:250',
+        ];
+        $this->validate($request, $rules);
         $activity = $this->activityService->confirmActivity($request);
-        // $id=$request->input('id');
-        // $activity = Activity::find($id);
-        // $activity -> Title = $request->input('activity_title');
-        // $activity -> Description = $request->input('activity_description');        
-        // $activity -> Activities_Date = $request->input('activity_date'); 
-        // $file = $request ->file('activity_image');
-        // dd($file);
-        // return view('/mainpages/editactivityconfirm')->with('activity',$activity, 'file' ,$file);
         return view('/mainpages/editactivityconfirm')->with('activity',$activity);
 
     }

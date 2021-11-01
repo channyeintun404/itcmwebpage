@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNavbarsTable extends Migration
+class CreateActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateNavbarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('navbars', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->id();
+            $table->string('Title', 200)->nullable();
+            $table->string('Images')->nullable();
+            $table->date('Activities_Date')->nullable();
+            $table->string('Description', 250)->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateNavbarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('navbars');
+        Schema::dropIfExists('activities');
     }
 }

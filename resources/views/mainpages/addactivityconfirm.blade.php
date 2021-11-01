@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       <label for="image">Images: <img src="/storage/activityimages/{{$activity->Images}}" alt="" style="width: 100px"></label>
-      <input type="file" id="addactivity_image" name="addactivity_image" value=" {{$activity->Images}}" hidden>
+      <input type="text" id="addactivity_image" name="addactivity_image" value=" {{$activity->Images}}" hidden>
     </div>
     <div class="form-group">
       <label for="date">Activity_Date: {{$activity->Activities_Date}}</label>
@@ -31,10 +31,10 @@
     </div>
   </div>
   <div class="card-footer">
-    <a href="/go-somewhere-else"><button class="btn btn-danger btn-close">Cancel</button></a>
+    <a href="/mainpage/activity" class="btn btn-danger">Cancel</a>
     <button type="submit" class="btn btn-success">Save</button>
     <!-- <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a> -->
-    <a href="/mainpage/activity" class="btn btn-primary">Back</a>
+    <!-- <a href="/mainpage/activity" class="btn btn-danger">Cancel</a> -->
   </div>
 </form>
 </div>
