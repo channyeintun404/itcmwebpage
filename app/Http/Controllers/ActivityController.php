@@ -71,8 +71,8 @@ class ActivityController extends Controller
         // handle the is_uploaded_file
         if($data->hasFile('addactivity_image')){
 
-          $path =$data->file('addactivity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
-          $imgname = substr($path,strlen("activityimages/"));  
+          $path =$data->file('addactivity_image')->storeAs("image/activities","activity_image_".$activity -> Title.date('s').".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("image/activities/"));  
         }
         if ($data->hasFile('addactivity_image')) {
           $activity-> Images = $imgname;

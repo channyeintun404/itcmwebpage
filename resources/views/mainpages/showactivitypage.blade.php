@@ -22,7 +22,7 @@
 <div class="card-body">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">              
-            <img src="{{ asset('storage/activityimages/'.$activity->Images) }}" class="img-fluid" >          
+            <img src="{{ asset('storage/image/activities/'.$activity->Images) }}" class="img-fluid" >          
         </div>
     </div>
 

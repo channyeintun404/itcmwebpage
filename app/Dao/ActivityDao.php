@@ -109,8 +109,8 @@ class ActivityDao
 
          // handle the is_uploaded_file
          if($request->hasFile('activity_image')){
-          $path =$request->file('activity_image')->storeAs("activityimages","activity_image_".$activity -> Title.".jpg",['disk'=>'public']);  
-          $imgname = substr($path,strlen("activityimages/"));  
+          $path =$request->file('activity_image')->storeAs("image/activities","activity_image_".$activity -> Title.date('s').".jpg",['disk'=>'public']);  
+          $imgname = substr($path,strlen("image/activities/"));  
          }
          if ($request->hasFile('activity_image')) {
           $activity-> Images = $imgname;
