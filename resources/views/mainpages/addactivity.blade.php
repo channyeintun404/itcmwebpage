@@ -9,7 +9,7 @@
   <div class="card-header card-primary">
     <h2 class="card-title" style="color:white;">Add Activities</h3>
   </div>
-test
+
 <form action="{{route('addconfirm')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
 @csrf
   <div class="card-body">
